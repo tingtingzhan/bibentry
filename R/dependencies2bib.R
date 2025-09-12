@@ -47,6 +47,7 @@ dependencies2bib <- function(
   sink()
   
   bib |>
+    normalizePath() |>
     sprintf(fmt = 'open \'%s\'') |>
     system()
   
