@@ -22,7 +22,8 @@ dependencies2bib <- function(
     ...
 ) {
   
-  bib <- tempfile(pattern = package, tmpdir = path, fileext = '.bib')
+  # bib <- tempfile(pattern = package, tmpdir = path, fileext = '.bib') # no!!
+  bib <- file.path(path, sprintf(fmt = '%s.bib', package))
   bib |>
     file.create()
   
