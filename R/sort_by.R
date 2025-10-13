@@ -1,40 +1,46 @@
 
-# S3 method dispatches for \link[utils]{bibentry}
-
 
 #' @title Sort \link[utils]{bibentry} By
 #' 
 #' @param x a \link[utils]{bibentry} object
 #' 
-#' @param y \link[base]{character} scalar
+#' @param y \link[base]{character} scalar, currently supported are `'year'` and `'bibtype'`
 #' 
 #' @param ... additional parameters of function \link[base]{order}
 #' 
 #' @details
 #' 
-#' Function [sort_by.bibentry()] sorts multiple citations of one package by some criteria (default being `'year'`).
+#' Function [sort_by.bibentry()] sorts multiple citations of one package by some criteria.
+#' 
+#' @seealso \link[utils]{sort.bibentry}
 #' 
 #' @examples
 #' 'rmarkdown' |> citation()
 #' 'rmarkdown' |> citation() |> sort_by(y = 'year', decreasing = TRUE)
+#' 'rmarkdown' |> citation() |> sort_by(y = 'bibtype')
 #' @keywords internal
 #' @export sort_by.bibentry
 #' @export
-sort_by.bibentry <- function(x, y = 'year', ...) {
+sort_by.bibentry <- function(x, y = c('year', 'bibtype'), ...) {
   
   nx <- length(x)
   if (nx == 1L) return(x)
   
-  if (!is.character(y) || length(y) != 1L || is.na(y) || !nzchar(y)) stop('`y` must be len-1 character')
+  y <- match.arg(y)
   
-  o <- x |>
-    unclass() |> # to avoid using ?utils:::`[[.bibentry`
-    vapply(FUN = \(i) i[[y]], FUN.VALUE = '') |> # all fields are \link[base]{character}
-    order(...)
-  
-  # um, if (y == 'bibtype'), we need to grab the base::attr ..
-  
-  return(x[o, drop = FALSE]) # utils:::`[.bibentry`
+  yval <- switch(
+    EXPR = y,
+    year = { # and others
+      x |>
+        unclass() |> # to avoid using ?utils:::`[[.bibentry`
+        vapply(FUN = \(i) i[[y]], FUN.VALUE = '') # all fields are \link[base]{character}
+    }, bibtype = { # and others
+      x |>
+        unclass() |>
+        vapply(FUN = attr, which = y, exact = TRUE, FUN.VALUE = '')
+    })
+    
+  return(x[order(yval, ...), drop = FALSE]) # utils:::`[.bibentry`
   
 }
 

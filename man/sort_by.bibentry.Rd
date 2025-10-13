@@ -4,12 +4,12 @@
 \alias{sort_by.bibentry}
 \title{Sort \link[utils]{bibentry} By}
 \usage{
-\method{sort_by}{bibentry}(x, y = "year", ...)
+\method{sort_by}{bibentry}(x, y = c("year", "bibtype"), ...)
 }
 \arguments{
 \item{x}{a \link[utils]{bibentry} object}
 
-\item{y}{\link[base]{character} scalar}
+\item{y}{\link[base]{character} scalar, currently supported are \code{'year'} and \code{'bibtype'}}
 
 \item{...}{additional parameters of function \link[base]{order}}
 }
@@ -17,10 +17,14 @@
 Sort \link[utils]{bibentry} By
 }
 \details{
-Function \code{\link[=sort_by.bibentry]{sort_by.bibentry()}} sorts multiple citations of one package by some criteria (default being \code{'year'}).
+Function \code{\link[=sort_by.bibentry]{sort_by.bibentry()}} sorts multiple citations of one package by some criteria.
 }
 \examples{
 'rmarkdown' |> citation()
 'rmarkdown' |> citation() |> sort_by(y = 'year', decreasing = TRUE)
+'rmarkdown' |> citation() |> sort_by(y = 'bibtype')
+}
+\seealso{
+\link[utils]{sort.bibentry}
 }
 \keyword{internal}
