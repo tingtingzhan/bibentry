@@ -18,7 +18,8 @@ Write All Denpendency's Citatation to \code{.bib} File
 }
 \examples{
 \dontrun{
-'nlme' |> dependencies2bib() # need to have repo to pass devtools::check
+'nlme' |> dependencies2bib(path = tempdir()) # need to have repo to pass devtools::check
+'spatstat' |> dependencies2bib(path = tempdir())
 }
 }
 \keyword{internal}

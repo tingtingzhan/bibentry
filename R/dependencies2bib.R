@@ -10,7 +10,8 @@
 #' 
 #' @examples
 #' \dontrun{
-#' 'nlme' |> dependencies2bib() # need to have repo to pass devtools::check
+#' 'nlme' |> dependencies2bib(path = tempdir()) # need to have repo to pass devtools::check
+#' 'spatstat' |> dependencies2bib(path = tempdir())
 #' }
 #' @keywords internal
 #' @importFrom tools package_dependencies
@@ -21,6 +22,13 @@ dependencies2bib <- function(
     path = tempdir(),
     ...
 ) {
+  
+  if (!is.character(package) || length(package) != 1L || is.na(package) || !nzchar(package)) stop('package must be len-1 character')
+  not_installed <- installed.packages() |>
+    rownames() |>
+    match(x = package, table = _) |>
+    is.na()
+  if (not_installed) stop('package not installed')
   
   # bib <- tempfile(pattern = package, tmpdir = path, fileext = '.bib') # no!!
   bib <- file.path(path, sprintf(fmt = '%s.bib', package))
