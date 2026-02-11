@@ -2,6 +2,7 @@
 
 
 #' @keywords internal
+#' @import utils
 '_PACKAGE'
 
 
