@@ -11,27 +11,30 @@
 \alias{.benjamini_yekutieli01}
 \alias{.lawley_maxwell71}
 \alias{.tukey49}
-\title{Literature}
+\title{\link[utils]{bibentry} of Statistical Methods in Package \strong{stats}}
 \usage{
-.fisher22()
+.fisher22(key = "Fisher22", ...)
 
-.pearson1900()
+.pearson1900(key = "Pearson1900", ...)
 
-.holm79()
+.holm79(key = "Holm79", ...)
 
-.hochberg88()
+.hochberg88(key = "Hochberg88", ...)
 
-.hommel88()
+.hommel88(key = "Hommel88", ...)
 
-.benjamini_hochberg95()
+.benjamini_hochberg95(key = "BenjaminiHochberg95", ...)
 
-.benjamini_yekutieli01()
+.benjamini_yekutieli01(key = "BenjaminiYekutieli01", ...)
 
-.lawley_maxwell71()
+.lawley_maxwell71(key = "LawleyMaxwell71", ...)
 
-.tukey49()
+.tukey49(key = "Tukey49", ...)
+}
+\arguments{
+\item{key, ...}{additional parameters of function \link[utils]{bibentry}}
 }
 \description{
-Literature
+\link[utils]{bibentry} of Statistical Methods in Package \strong{stats}
 }
 \keyword{internal}
