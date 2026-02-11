@@ -3,11 +3,11 @@
 #' @title Literature
 #' 
 #' @keywords internal
-#' @name literature
+#' @name bib
 #' @export
 .fisher22 <- \() {
   bibentry(
-    bibtype = 'Article', key = 'Fisher22',
+    bibtype = 'article', key = 'Fisher22',
     author = 'Ronald Aylmer Fisher',
     journal = 'Journal of the Royal Statistical Society',
     number = '1',
@@ -19,7 +19,25 @@
   )
 }
 
-#' @rdname literature
+
+#' @rdname bib
+#' @export
+.pearson1900 <- \() {
+  bibentry(
+    bibtype = 'article', key = 'Pearson1900',
+    author = 'Karl Pearson',
+    title = 'X. On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling',
+    journal = 'The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science',
+    volume = '50',
+    number = '302',
+    pages = '157--175',
+    year = '1900',
+    publisher = 'Taylor & Francis',
+    doi = '10.1080/14786440009463897'
+  )
+}
+
+#' @rdname bib
 #' @export
 .holm79 <- \() {
   bibentry(bibtype = 'Article', key = 'Holm79',
@@ -35,7 +53,7 @@
 }
 
 
-#' @rdname literature
+#' @rdname bib
 #' @export
 .hochberg88 <- \() {
   bibentry(bibtype = 'Article', key = 'Hochberg88',
@@ -52,7 +70,7 @@
 }
 
 
-#' @rdname literature
+#' @rdname bib
 #' @export
 .hommel88 <- \() {
   bibentry(bibtype = 'Article', key = 'Hommel88',
@@ -69,7 +87,7 @@
 }
 
 
-#' @rdname literature
+#' @rdname bib
 #' @export
 .benjamini_hochberg95 <- \() {
   bibentry(bibtype = 'Article', key = 'BenjaminiHochberg95',
@@ -85,7 +103,7 @@
   )
 }
 
-#' @rdname literature
+#' @rdname bib
 #' @export
 .benjamini_yekutieli01 <-\() {
   bibentry(bibtype = 'Article', key = 'BenjaminiYekutieli01',
@@ -100,7 +118,7 @@
   )
 }
 
-#' @rdname literature
+#' @rdname bib
 #' @export
 .lawley_maxwell71 <- \() {
   bibentry(
@@ -118,7 +136,7 @@
 }
 
 
-#' @rdname literature
+#' @rdname bib
 #' @export
 .tukey49 <- \() {
   bibentry(
