@@ -15,6 +15,7 @@
 sink2 <- function(x, file, ...) UseMethod(generic = 'sink2')
 
 #' @rdname sink2
+#' @export sink2.Bibtex
 #' @export
 sink2.Bibtex <- function(x, file, ...) {
   if (file.exists(file)) file.remove(file) # without warning
@@ -27,6 +28,7 @@ sink2.Bibtex <- function(x, file, ...) {
 
 
 #' @rdname sink2
+#' @export sink2.bibentry
 #' @export
 sink2.bibentry <- function(x, ...) {
   x |> 
