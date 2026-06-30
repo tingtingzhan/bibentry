@@ -16,12 +16,12 @@
 #' then retains `attr(., which = 'package')`.
 #' 
 #' @examples
-#' (bib_rmarkdown = 'rmarkdown' |> citation())
-#' bib_rmarkdown |> subset(subset = (bibtype != 'Manual'))
-#' bib_rmarkdown |> subset(subset = (bibtype == 'Manual'))
+#' (b1 = 'rmarkdown' |> citation())
+#' b1 |> subset(subset = (bibtype != 'Manual'))
+#' b1 |> subset(subset = (bibtype == 'Manual'))
 #' 
-#' (bib_ggplot2 = 'ggplot2' |> citation())
-#' bib_ggplot2 |> subset(subset = (bibtype == 'Book'))
+#' (b2 = 'ggplot2' |> citation())
+#' b2 |> subset(subset = (bibtype == 'Book'))
 #' 
 #' @keywords internal
 #' @name subset_bibentry
