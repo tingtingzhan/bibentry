@@ -3,7 +3,7 @@
 #' @param x a \link[utils]{citation} object
 #' 
 #' @returns
-#' Function [package2key()] returns a \link[utils]{citation} object.
+#' The function [package2key()] returns a \link[utils]{citation} object.
 #' 
 #' @examples
 #' citation() |> toBibtex()

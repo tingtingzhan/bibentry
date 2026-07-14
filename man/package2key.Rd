@@ -10,7 +10,7 @@ package2key(x)
 \item{x}{a \link[utils]{citation} object}
 }
 \value{
-Function \code{\link[=package2key]{package2key()}} returns a \link[utils]{citation} object.
+The function \code{\link[=package2key]{package2key()}} returns a \link[utils]{citation} object.
 }
 \description{
 Use Package as Key in \link[utils]{citation}
